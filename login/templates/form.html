@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+</head>
+<body>
+    <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center" style="background-color:aliceblue">
+        <div class="form" style="background-color: rgb(30, 30, 30); width: 35vw; height: 85vh; border-radius: 10px; box-shadow: -8px 12px 5px 5px rgba(0, 0, 0, 0.2);">
+            <div class="row d-flex justify-content-center align-items-center" style="text-align: center;" >
+                <img src="{% static 'images/logo.png' %}" alt="logo" style="width: 15%; height: auto;margin-top: 10px;">
+                <br>
+                <h3 style="color: aliceblue; font-size: 14px;">TradeIQ</h3>
+            </div>
+            <div class="row" style="margin-top: 10%;text-align: center; color: aliceblue;">
+                <h1 >Log in</h1>
+                <p>Log in with credentials</p>
+            </div>
+            <form method="post" action="{% url 'login' %}">
+            
+            <div class="row d-flex justify-content-center align-items-center" style="width: 90%; margin: auto;">
+                <div class="row" style="color: aliceblue; text-align: left;" >
+                    {% csrf_token %}
+                    <p style="margin-bottom: 0px; margin-left: -10px;">Email</p>
+                    <input type="text" class="form-control" id="email" name="username" required>
+                    <br>
+                    <p style="margin-bottom: 0px; margin-top: 5%; margin-left: -10px;">Password</p>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                    <br>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10%;">Login</button>
+                    <br>
+                    <p style="color: red; text-align: center;" id="errMessage">Invalid username or password</p>
+                    
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+    <script>
+        
+        const ErrMessage = document.getElementById('errMessage');
+        var errMessageText = "{{ error_message }}";
+        console.log(errMessageText);
+        if (errMessageText) {
+            ErrMessage.style.display = 'block';
+            console.log('wla');
+        } else {
+            ErrMessage.style.display = 'none';
+            console.log('naa');
+        }
+        
+        
+        
+    </script>
+</html>
