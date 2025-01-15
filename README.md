@@ -17,6 +17,8 @@
 
 TradeIQ is a web-based MT5 market price predictor powered by AI using Django and Keras.
 
+### STATUS: UNDER DEVELOPMENT - THE AI CAPABILOTY IS YET TO BE CODED : >
+
 ## Features
 
 * [List the features of your project here, e.g.]
@@ -53,3 +55,4 @@ Contributions are welcome! To contribute to TradeIQ, follow these steps:
 ## License
 
 TradeIQ is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
