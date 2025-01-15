@@ -2,6 +2,8 @@
 
 # TradeIQ
 
+![Image description](screenshot.png)
+
 ## Table of Contents
 
 * [About](#about)
